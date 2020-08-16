@@ -8,6 +8,7 @@ ARG k8sVersion
 
 RUN mkdir -force C:\k\kube-proxy; \
   pushd C:\k\kube-proxy; \
+  Write-Output ${env:k8sVersion}; \
   curl.exe -sLO https://dl.k8s.io/${env:k8sVersion}/bin/windows/amd64/kube-proxy.exe
 
 RUN mkdir C:\utils; \
